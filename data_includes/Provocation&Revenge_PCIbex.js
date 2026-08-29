@@ -2,7 +2,8 @@
  * Provocation & Revenge — PCIbex norming experiment
  *
  * Put this script in data_includes.
- * Put sentences_mvb_8_versions.csv in chunk_includes / Resources.
+ * Put sentences_mvb_8_versions_Elvan_260828_Yingjie_260829.csv
+ * in chunk_includes / Resources.
  *
  * Only generated_version = both_male / both_female is used.
  * Each participant sees one same-gender condition per list_item.
@@ -17,7 +18,8 @@ PennController.ResetPrefix(null);
 // CONFIGURATION
 // ============================================================
 
-const DATA_FILE = "sentences_mvb_8_versions.csv";
+const DATA_FILE =
+  "sentences_mvb_8_versions_Elvan_260828_Yingjie_260829.csv";
 // Temporary: set to false before collecting the full study.
 const DEMO_MODE = false;
 const DEMO_ITEM_LIMIT = 5;
@@ -54,6 +56,7 @@ window.__normingDuration = null;
 window.__normingState = {};
 
 Header()
+  .log("data_file", DATA_FILE)
   .log("PROLIFIC_ID", window.PROLIFIC_ID)
   .log("STUDY_ID", window.STUDY_ID)
   .log("SESSION_ID", window.SESSION_ID);
@@ -1619,6 +1622,38 @@ function createNormingChoiceTrial(
       config.adjAmb || ""
     )
     .log(
+      "verb_changed",
+      config.verbChanged || ""
+    )
+    .log(
+      "verb_change_log",
+      config.verbChangeLog || ""
+    )
+    .log(
+      "adjective_changed",
+      config.adjectiveChanged || ""
+    )
+    .log(
+      "adjective_change_log",
+      config.adjectiveChangeLog || ""
+    )
+    .log(
+      "preposition_changed",
+      config.prepositionChanged || ""
+    )
+    .log(
+      "preposition_change_log",
+      config.prepositionChangeLog || ""
+    )
+    .log(
+      "und_changed",
+      config.undChanged || ""
+    )
+    .log(
+      "und_change_log",
+      config.undChangeLog || ""
+    )
+    .log(
       "pronoun",
       config.pronoun || ""
     )
@@ -2434,6 +2469,46 @@ Template(
               adjAmb:
                 cleanCell(
                   row.adj_amb
+                ),
+
+              verbChanged:
+                cleanCell(
+                  row.verb_changed
+                ),
+
+              verbChangeLog:
+                cleanCell(
+                  row.verb_change_log
+                ),
+
+              adjectiveChanged:
+                cleanCell(
+                  row.adjective_changed
+                ),
+
+              adjectiveChangeLog:
+                cleanCell(
+                  row.adjective_change_log
+                ),
+
+              prepositionChanged:
+                cleanCell(
+                  row.praposition_changed
+                ),
+
+              prepositionChangeLog:
+                cleanCell(
+                  row.praposition_change_log
+                ),
+
+              undChanged:
+                cleanCell(
+                  row.und_changed
+                ),
+
+              undChangeLog:
+                cleanCell(
+                  row.und_change_log
                 ),
 
               pronoun:
