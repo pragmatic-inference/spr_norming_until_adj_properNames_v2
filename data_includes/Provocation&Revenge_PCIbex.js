@@ -2493,12 +2493,12 @@ Template(
 
               prepositionChanged:
                 cleanCell(
-                  row.praposition_changed
+                  row.preposition_changed
                 ),
 
               prepositionChangeLog:
                 cleanCell(
-                  row.praposition_change_log
+                  row.preposition_change_log
                 ),
 
               undChanged:
